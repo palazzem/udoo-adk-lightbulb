@@ -64,8 +64,6 @@ public class AdkManager implements IAdkManager {
             FileDescriptor fileDescriptor = mParcelFileDescriptor.getFileDescriptor();
             mFileInputStream = new FileInputStream(fileDescriptor);
             mFileOutputStream = new FileOutputStream(fileDescriptor);
-
-            // TODO: start reading from USB (AsyncTask)
         }
     }
 
@@ -79,14 +77,13 @@ public class AdkManager implements IAdkManager {
             }
         }
 
-        // TODO reset
         mParcelFileDescriptor = null;
         mUsbAccessory = null;
     }
 
     @Override
     public void readText() {
-
+        // TODO: requires implementation
     }
 
     @Override
