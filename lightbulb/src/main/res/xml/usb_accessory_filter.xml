@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <usb-accessory
+        version="0.1.0"
+        model="UDOO-Board"
+        manufacturer="Example, Inc."/>
+</resources>
