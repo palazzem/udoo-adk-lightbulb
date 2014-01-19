@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:keepScreenOn="true"
         android:layout_gravity="center_horizontal"
+        android:onClick="switchLight"
         android:src="@drawable/lightbulb_off"/>
 
     <!-- This FrameLayout insets its children based on system windows using
