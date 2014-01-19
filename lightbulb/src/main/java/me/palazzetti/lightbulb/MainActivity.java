@@ -36,6 +36,12 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        mAdkManager.closeAdk();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         mAdkManager.resumeAdk();
