@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.palazzetti.lightbulb" >
 
-    <uses-feature android:name="android.hardware.usb.accessory" />
+    <uses-feature android:name="android.hardware.usb.accessory" android:required="true"/>
 
     <application
         android:allowBackup="true"
