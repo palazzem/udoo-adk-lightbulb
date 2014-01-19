@@ -13,6 +13,6 @@ public interface IAdkManager {
     void sendText(String text);
 
     // Activity related interfaces
-    void pauseAdk();
+    void closeAdk();
     void resumeAdk();
 }

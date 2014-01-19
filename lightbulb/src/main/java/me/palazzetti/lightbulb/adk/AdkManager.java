@@ -99,7 +99,7 @@ public class AdkManager implements IAdkManager {
     }
 
     @Override
-    public void pauseAdk() {
+    public void closeAdk() {
         closeAccessory();
     }
 
@@ -116,7 +116,6 @@ public class AdkManager implements IAdkManager {
     public IntentFilter getDetachedFilter() {
         return mDetachedFilter;
     }
-
     public BroadcastReceiver getUsbReceiver() {
         return mUsbReceiver;
     }
