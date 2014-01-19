@@ -1,6 +1,8 @@
 package me.palazzetti.lightbulb;
 
 import me.palazzetti.lightbulb.adk.AdkManager;
+import me.palazzetti.lightbulb.arduino.Arduino;
+import me.palazzetti.lightbulb.arduino.NotImplementedCommand;
 import me.palazzetti.lightbulb.util.SystemUiHider;
 
 import android.annotation.TargetApi;
@@ -13,6 +15,7 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -22,13 +25,17 @@ import android.widget.Toast;
  * @see SystemUiHider
  */
 public class MainActivity extends Activity {
+    // Needed for UI
     private static final boolean AUTO_HIDE = true;
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
     private static final boolean TOGGLE_ON_CLICK = true;
     private static final int HIDER_FLAGS = SystemUiHider.FLAG_HIDE_NAVIGATION;
     private SystemUiHider mSystemUiHider;
+    private ImageView lightBulbView;
 
+    // Needed for Adk and status switching
     private AdkManager mAdkManager;
+    private boolean bulbStatus = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +47,7 @@ public class MainActivity extends Activity {
         registerReceiver(mAdkManager.getUsbReceiver(), mAdkManager.getDetachedFilter());
 
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
-        final ImageView lightBulbView = (ImageView) findViewById(R.id.lightbulb);
+        lightBulbView = (ImageView) findViewById(R.id.lightbulb);
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
@@ -96,6 +103,12 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        mAdkManager.resumeAdk();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(mAdkManager.getUsbReceiver());
@@ -137,6 +150,15 @@ public class MainActivity extends Activity {
      * Click listener for light bulb ImageView
      */
     public void switchLight(View v) {
-        // TODO: grab and switch current status then send command to Arduino
+        bulbStatus = !bulbStatus;
+
+        try {
+            int command = bulbStatus ? 1 : 0;
+            int resourceImage = bulbStatus ? R.drawable.lightbulb : R.drawable.lightbulb_off;
+            Arduino.command(mAdkManager, command);
+            lightBulbView.setImageResource(resourceImage);
+        } catch (NotImplementedCommand e) {
+            e.printStackTrace();
+        }
     }
 }

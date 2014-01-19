@@ -30,7 +30,6 @@
             android:background="@color/black_overlay"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
-
         </LinearLayout>
     </FrameLayout>
 
