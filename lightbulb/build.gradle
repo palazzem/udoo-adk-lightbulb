@@ -2,13 +2,13 @@ apply plugin: 'android'
 
 android {
     compileSdkVersion 17
-    buildToolsVersion "19.0.1"
+    buildToolsVersion "19.0.3"
 
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 17
         versionCode 1
-        versionName "1.0"
+        versionName "0.1.0"
     }
     buildTypes {
         release {
@@ -18,6 +18,4 @@ android {
     }
 }
 
-dependencies {
-    compile 'com.android.support:support-v4:18.0.0'
-}
+dependencies {}
