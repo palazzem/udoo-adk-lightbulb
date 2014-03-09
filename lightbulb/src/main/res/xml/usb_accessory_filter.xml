@@ -2,6 +2,6 @@
 <resources>
     <usb-accessory
         version="0.1.0"
-        model="UDOO-Board"
+        model="ADK-Led"
         manufacturer="Example, Inc."/>
 </resources>
