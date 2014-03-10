@@ -18,4 +18,6 @@ android {
     }
 }
 
-dependencies {}
+dependencies {
+    compile 'me.palazzetti:adktoolkit:0.1.0'
+}

@@ -1,6 +1,6 @@
 package me.palazzetti.lightbulb.arduino;
 
-import me.palazzetti.lightbulb.adk.AdkManager;
+import me.palazzetti.adktoolkit.AdkManager;
 
 /**
  * Implements Arduino commands interface

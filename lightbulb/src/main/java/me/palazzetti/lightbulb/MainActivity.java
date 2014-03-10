@@ -1,6 +1,6 @@
 package me.palazzetti.lightbulb;
 
-import me.palazzetti.lightbulb.adk.AdkManager;
+import me.palazzetti.adktoolkit.AdkManager;
 import me.palazzetti.lightbulb.arduino.Arduino;
 import me.palazzetti.lightbulb.arduino.NotImplementedCommand;
 
