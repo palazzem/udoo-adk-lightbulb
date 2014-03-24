@@ -20,10 +20,10 @@ public class Arduino {
     }
 
     private static void bulbOff(AdkManager adkManager) {
-        adkManager.sendText("0");
+        adkManager.writeSerial("0");
     }
 
     private static void bulbOn(AdkManager adkManager) {
-        adkManager.sendText("1");
+        adkManager.writeSerial("1");
     }
 }
