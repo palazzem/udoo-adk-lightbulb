@@ -34,16 +34,21 @@ No more!
 Changelog
 ---------
 
-0.1.1 [2014-03-10]
-~~~~~~~~~~~~~~~~~~
+0.1.2
+~~~~~
+
+* Updated ADK Toolkit to 0.2.0
+
+0.1.1
+~~~~~
 
 * Updated Gradle plugin
 * Removed all ADK source code in favor of `ADK Toolkit`_
 
 .. _ADK Toolkit: https://github.com/palazzem/adk-toolkit
 
-0.1.0 [2014-01-19]
-~~~~~~~~~~~~~~~~~~
+0.1.0
+~~~~~
 
 * AdkManager: write wrapper
 * Removed complex UI for better code readability
